@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+} 
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    width: 90%;
+    margin: auto;
+}
+
+h1 {
+    color: #999;
+    margin: 1rem 0;
+    text-align: center;
+    font-weight: 700;
+}
+
+section.demo1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+div {
+    border: solid 8px rgba(13, 149, 216, .5);
+    background-color: #f6da24;
+    padding: 1rem;
+    text-align: center;
+    background-image: url('../images/repeaterw.png');
+    background-size: cover;
+}
+
+div:nth-child(1) {background-clip: border-box;}
+div:nth-child(2) {background-clip: padding-box;}
+div:nth-child(3) {background-clip: content-box;}
+div:nth-child(3) p {margin: 10px;}
+
+header {
+    border-top: solid 1px #999;
+    padding: 1rem 0;
+    margin: 2rem auto;
+}
+.demo2 h1 {
+    color: hsl(208, 85%, 62%);
+    font-size: clamp(2rem, 10vw, 5rem);
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+    background-image: url('../images/flower.jpg');
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.demo3 h1 {
+    --c1: hsl(188, 90%, 55%);
+    --c2: hsl(40, 95%, 55%);
+    --bgSize: 300%;
+    font-size: clamp(3rem, 15vw, 8rem);
+    line-height: 1;
+    background: linear-gradient(
+            90deg,
+            var(--c1), var(--c2), var(--c1)
+    )
+            0 0 / var(--bgSize) 100%;
+     animation: moveBG 3s infinite linear;   
+     background-clip: text;
+     -webkit-background-clip: text;
+     color: transparent;    
+}
+
+@keyframes moveBG {
+    to { background-position: var(--bgSize) 0;}
+}

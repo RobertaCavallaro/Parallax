@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- google fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
+  <title>Parallax Effects</title>
+  <link rel="stylesheet" href="css/parallax.css
+  ">
+</head>
+<body>
+  <header class="hero">
+    <div class="headerMask">
+      <h1>Be Happy!</h1>
+    </div>
+  </header>
+  <div class="f1"><img src="images/bubble2.png" alt="bubble"></div>
+  <div class="b2"><img src="images/whale.png" alt="bubble"></div>
+    <main>
+      <h2>Happiness is like bubbles</h2>
+      <p>“Miracles happen every day. They bubble up from their hidden source, surround us with opportunities and disappear.” ~ Deepak Chopra</p>
+      <p>“Two bubbles found they had rainbows on their curves. They flickered out saying: “It was worth being a bubble, just to have held that rainbow thirty seconds.” ~ Carl Sandburg</p>
+      <p>“Happiness is like rising bubbles — delightful and inevitably fleeting. Joy is the oxygen — ever present.” ~ Danielle LaPorte</p>
+      <p>“Life is too short, too precious, too painful to waste on worldly bubbles that burst” ~ John Piper</p>
+      <p>Reiciendis, eos quas. Consequatur magnam itaque eius odit adipisci ducimus, facere dignissimos iure maxime deserunt iusto, perspiciatis animi temporibus nam magni corporis error placeat tempore quos repellendus, incidunt similique cum?</p>
+      <p>“Days are coloured bubbles that float upon the surface of fathomless nights.” ~ Rabindranath Tagore</p>
+      <p>“Oh, for the wonder that bubbles into my soul.” ~ D. H. Lawrence</p>
+    </main>
+
+    <script>
+      window.addEventListener('scroll', function(){
+        let scrollPosition = window.scrollY;
+        let moveDistance = scrollPosition * 4;
+        document.querySelector('.f1').style.transform = "translateY(" + moveDistance + "px)";
+      })
+      
+      const scrollMove = document.querySelector('.b2');
+      let prevScrollPos = window.scrollY;
+
+      window.addEventListener('scroll', () => {
+        const currentScrollPos = window.scrollY;
+        if(currentScrollPos . prevScrollPos) {
+          //  scroll down
+          scrollMove.classList.remove('flip');
+          scrollMove.style.transform = `translateX(50%) translateX(${currentScrollPos}px)`;
+        } else {
+          // scroll up
+          scrollMove.classList.add('flip');
+          scrollMove.style.transform = `scaleX(-1) translateX(-30%) translateX(${-currentScrollPos}px)`;
+        }
+        prevScrollPos = currentScrollPos;
+      })
+
+
+    </script>
+
+  
+</body>
+</html>
